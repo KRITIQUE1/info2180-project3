@@ -1,0 +1,63 @@
+document.addEventListener("DOMContentLoaded",function()
+{
+    var login = document.getElementById("login-button");
+    login.addEventListener("click",function(){
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    if(username.value=="admin" && password.value=="admin1001"){
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function(){
+        if (xmlHttp.readyState==4 && xmlHttp.status == 200)
+        {
+            document.getElementsByClassName("login-div")[0].innerHTML=xmlHttp.responseText;
+            logout();
+        }
+            
+        };
+        xmlHttp.open("GET","../HTML/add.html",true);
+        xmlHttp.send();
+    }
+    if(username.value !="admin"){
+         var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function(){
+        if (xmlHttp.readyState==4 && xmlHttp.status == 200)
+        {
+            var user_data = xmlHttp.responseText;
+            if (username.value == user_data[1] && username.value == "admin" && password.value == user_data[2] )
+            {
+                document.getElementsByClassName("login-div")[0].innerHTML=xmlHttp.responseText;
+                
+                logout();
+            }
+        }
+    };
+     xmlHttp.open("GET","../PHP/login.php?username="+username.value,true);
+     xmlHttp.send();
+    }
+   /**/
+    });
+    
+    
+    
+    
+    
+            function logout(){
+            var l=document.getElementById("logging");
+            l.addEventListener("click",function()
+       {
+           var xmlh = new XMLHttpRequest();
+        xmlh.onreadystatechange = function()
+         {
+        if (xmlh.readyState == 4 && xmlh.status == 200) 
+            {
+                
+        document.body.innerHTML=xmlh.responseText;
+            }
+             
+         };
+    xmlh.open("GET", "../PHP/logout.php", true);
+    xmlh.send();
+       });
+       }
+ 
+});

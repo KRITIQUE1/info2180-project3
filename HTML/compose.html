@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CheapoMail</title>
+    </head>
+    <body>
+			<div>
+					<h1> Compose New Message </h1>
+					<form id="comp_msg" method="post" action="../PHP/default.php">
+						<div class="msg_field">
+							<label> Subject: </label><br>
+							<input name="subject" type="text" placeholder="Add a Subject">
+						</div>
+						<div class="msg_field">
+							<label>Recipiants:</label><br>
+							<input name = "receipient_id" type="text" placeholder="Add a Recipiant ID">
+						</div>
+						<div class="msg_field">
+							<label>Message: </label><br>
+							<input id = "message-feild" type="text" name="message" rows="10" cols="40">
+						</div>
+						<div>
+							<input name = "Send" type="submit" value = "Send" id="submit">
+						</div>
+					</form>
+				</div>
+				  </body>
+    </html>

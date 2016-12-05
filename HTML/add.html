@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title> CheapoMailHome </title>
+		<link rel="stylesheet" type="text/css" href="../CSS/CheapoB.css">
+	</head>
+	<body>
+		<div style="float:left;" class="nav-container">
+  <ul class="nav">
+    <li class="active">
+      <a href="#">
+        <span class="icon-home"></span>
+        <span class="text">home</span>
+      </a>
+    </li>
+    <li>
+      <a id = "add-user" >
+        <span class="icon-user"></span>
+        <span class="text">ADD USER</span>
+      </a>
+      </li>
+    <li>
+      <a id = "inbox">
+        <span class="icon-headphones"></span>
+        <span class="text">INBOX</span>
+      </a>
+      </li>
+     <li>
+      <a id = "compose" >
+        <span class="icon-user"></span>
+        <span class="text">Compose</span>
+      </a>
+      </li>
+    <li>
+      <a href="sent.html">
+        <span class="icon-picture"></span>
+        <span class="text">SENT</span>    
+      </a>
+    </li>
+    <li>
+      <a href="logout.php">
+        <span class="icon-facetime-video"></span>
+		<span class="text">LOGOUT</span>
+      </a>
+    </li>
+  </ul>
+</div>
+		<div style="float:center; margin-left:490px;">
+	<div>
+		<div>
+		</div>
+		<div id="content-area">
+			<form action="../PHP/adduser.php" method="post" autocomplete="on">
+						
+						 <div>
+							<label for="firstnamesignup" class="fname" >FIRSTNAME</label>
+							<input class="field" name="firstname" required="required" type="text" placeholder="eg. John">
+						</div>
+						<br>
+						<div>
+							<label for="lastnamesignup" class="lname" >LASTNAME</label>
+							<input class="field" name="lastname" required="required" type="text" placeholder="eg. Smith">
+						</div>
+						<br>
+						<div>
+							<label for="usernamesignup" class="uname" >USERNAME</label>
+							<input class="field" name="username" required="required" type="text" placeholder="eg. J.Smith">
+						</div>
+						<br>
+						<div>
+							<label for="emailsignup" class="youmail" > Your Email</label>
+							<input class="field" name="email" required="required" type="email" placeholder="eg. J.Smith@gmail.com">
+						</div>
+						<br>
+						<div>
+							<label for="passwordsignup" class="youpasswd" >Your Password </label>
+							<input class="field" name="pass" required="required" type="password" placeholder="mypassword" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title= "PASS WORD should be 8 characters long, Must contain AT LEAST one letter, one number and one UPPERCASE letter ">
+					  	</div>
+						<br>
+					  	<div>
+							<label for="passwordsignup_confirm" class="youpasswd">Confirm Password </label>
+							<input class="field" name="pass_con" required="required" type="password" placeholder="mypassword">
+						 </div>
+						<br>
+					  <div>
+						<input type="submit" value = "Submit"  name="AddUser">
+					</div>
+				</form>
+			</div><!--contentent-area-->
+	</div>
+
+</div>
+
+</body>
+</html>
